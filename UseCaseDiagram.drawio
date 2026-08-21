@@ -1,0 +1,87 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Use-Case Diagram" id="ucd1">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- System boundary -->
+        <mxCell id="boundary1" value="Municipal Solid Waste Route Optimizer" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="60" width="760" height="680" as="geometry" />
+        </mxCell>
+
+        <!-- Use Cases -->
+        <mxCell id="uc01" value="UC-01&lt;br&gt;Generate Optimized&lt;br&gt;Collection Route" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="100" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc02" value="UC-02&lt;br&gt;Ingest Bin&lt;br&gt;Fill-Level Data" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="100" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc07" value="UC-07&lt;br&gt;Manually Tag Bin&lt;br&gt;for Collection" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="220" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc03" value="UC-03&lt;br&gt;Assign Route to&lt;br&gt;Truck Driver" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="220" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc04" value="UC-04&lt;br&gt;Mark Bin as&lt;br&gt;Collected" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="340" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc05" value="UC-05&lt;br&gt;File Missed-Pickup&lt;br&gt;Complaint" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="340" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc06" value="UC-06&lt;br&gt;Review &amp;amp; Resolve&lt;br&gt;Complaint" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="460" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Actors -->
+        <mxCell id="actorSupervisor" value="Sanitation Supervisor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="260" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="actorDriver" value="Truck Driver" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="actorCitizen" value="Citizen" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="actorSensor" value="Smart Bin Sensor&lt;br&gt;(Device/System)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="100" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Associations (actor to use case, plain lines) -->
+        <mxCell id="assoc1" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="actorSupervisor" target="uc01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc2" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="actorSupervisor" target="uc07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc3" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="actorSupervisor" target="uc03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc4" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="actorSupervisor" target="uc06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc5" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="actorDriver" target="uc03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc6" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="actorDriver" target="uc04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc7" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="actorCitizen" target="uc05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc8" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="actorSensor" target="uc02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Include / Extend relationships -->
+        <mxCell id="incEdge" value="&amp;#171;include&amp;#187;" style="endArrow=open;endFill=0;dashed=1;html=1;fontStyle=2;" edge="1" parent="1" source="uc01" target="uc02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="extEdge" value="&amp;#171;extend&amp;#187;" style="endArrow=open;endFill=0;dashed=1;html=1;fontStyle=2;" edge="1" parent="1" source="uc07" target="uc01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
